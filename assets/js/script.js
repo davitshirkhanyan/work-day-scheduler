@@ -1,0 +1,1 @@
+$('#currentDay').moment().toNow();
