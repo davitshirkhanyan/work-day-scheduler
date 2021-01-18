@@ -38,10 +38,11 @@ let saveObjToLocalStorage = function(obj) {
 let getScheduleDay = function(key, value) {
     if(!localStorage.getItem('workSchedule')) {
         saveLocalStorage();
-    }
+    } else {
         let workDay = JSON.parse(localStorage.getItem('workSchedule'));
         workDay[key] = value;
         saveObjToLocalStorage(workDay);
+    }
 };
 
 let updateWorkSchedule = function(dayObj) {
@@ -52,10 +53,10 @@ let updateWorkSchedule = function(dayObj) {
 };
 
 // use save button function
-$("button").click(function() {
-    key = $(this).siblings("textarea").val();
-    value = $(this).siblings("div").text();
-    getScheduleDay(value, key);
+$("button").on("click", function(key, value) {
+    key = $(this).siblings("div").text();
+    value = $(this).siblings("textarea").val();
+    getScheduleDay(key, value);
 });
 
 setInterval(currentDate, 1000);
