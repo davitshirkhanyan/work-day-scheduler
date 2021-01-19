@@ -10,6 +10,9 @@ This app is a simple calendar application that allows the user to save events fo
 * You can enter an event
 * Save the text for the event in local storage
 
+![schedule1](https://user-images.githubusercontent.com/74809116/105012790-61f05f00-59f3-11eb-8f0d-3800c2c9282f.PNG)
+![schedule2](https://user-images.githubusercontent.com/74809116/105012793-64eb4f80-59f3-11eb-83de-d16eb3b2e458.PNG)
+
 ## Built with
 * HTML
 * CSS

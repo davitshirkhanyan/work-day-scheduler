@@ -7,6 +7,15 @@ $("#currentDay").text(moment().format("MMMM DD YYYY hh:mm:ss A"));
 // add work schedule variable 
 let workHours = ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17"];
 
+$(document).ready(function() {
+    if(!localStorage.getItem('workSchedule')) {
+        updateWorkSchedule(workHours);
+    } else {
+        updateWorkSchedule(JSON.parse(localStorage.getItem('workSchedule')));
+        updatetime();
+    }
+});
+
 // add function to update the date with colors
 function updatetime() {
   let currentTime = moment().format('H');
@@ -25,15 +34,6 @@ function updatetime() {
     }
   }
 };
-
-$(document).ready(function() {
-    if(!localStorage.getItem('workSchedule')) {
-        updateWorkSchedule(workHours);
-    } else {
-        updateWorkSchedule(JSON.parse(localStorage.getItem('workSchedule')));
-        updatetime();
-    }
-});
 
 // add functions to save items in localstorage
 let saveLocalStorage = function() {
