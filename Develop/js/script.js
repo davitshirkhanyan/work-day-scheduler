@@ -4,17 +4,26 @@ let currentDate = function () {
 $("#currentDay").text(moment().format("MMMM DD YYYY hh:mm:ss A"));
 };
 
-let workHours = {
-  "8AM": "",
-  "9AM": "",
-  "10AM": "",
-  "11AM": "",
-  "12PM": "",
-  "1PM": "",
-  "2PM": "",
-  "3PM": "",
-  "4PM": "",
-  "5PM": "",
+// add work schedule variable 
+let workHours = ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17"];
+
+// add function to update the date with colors
+function updatetime() {
+  let currentTime = moment().format('H');
+
+  for(let i = 0; i < workHours.length; i++) {
+    if (parseInt(workHours[i]) > currentTime) {
+      $("#text-" + i).removeClass("past");
+      $("#text-" + i).addClass("future");
+    }
+    else if (parseInt(workHours[i]) < currentTime) {
+      $("#text-" + i).addClass("past");
+    }
+    else {
+      $("#text-" + i).removeClass("past");
+      $("#text-" + i).addClass("present");
+    }
+  }
 };
 
 $(document).ready(function() {
@@ -22,6 +31,7 @@ $(document).ready(function() {
         updateWorkSchedule(workHours);
     } else {
         updateWorkSchedule(JSON.parse(localStorage.getItem('workSchedule')));
+        updatetime();
     }
 });
 
@@ -58,5 +68,5 @@ $("button").on("click", function(key, value) {
     value = $(this).siblings("textarea").val();
     getScheduleDay(key, value);
 });
-
+  
 setInterval(currentDate, 1000);
