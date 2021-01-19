@@ -1,0 +1,94 @@
+:root {
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --trimery-color: #06AED5;  
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: var(--primary-color);
+  border-left: 1px solid var(--primary-color);
+  border-right: 3px solid var(--trimery-color);
+  padding: 10px;
+  outline: none;
+}
+
+textarea:focus {
+  border: 4px solid var(--trimery-color);
+}
+/* add style to header */
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+  color: var(--primary-color);
+  border-radius: 0;
+  border-bottom: 10px solid var(--primary-color);
+}
+
+.row {
+  white-space: pre-wrap;
+  height: 80px;
+  border-top: 1px solid var(--secondary-color);
+}
+/* end styles to header */
+
+.hour {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-top: 1px dashed var(--primary-color);
+}
+
+.past {
+  background-color: #d3d3d3;
+  color: var(--primary-color);
+}
+
+.present {
+  background-color: #ff6961;
+  color: var(--secondary-color);
+}
+
+.future {
+  background-color: #77dd77;
+  color: var(--secondary-color);
+}
+
+/* add style to save button */
+.saveBtn {
+  border-left: 1px solid var(--primary-color);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: var(--trimery-color);
+  color: var(--secondary-color);
+  box-shadow: 2px 2px 4px var(--primary-color);
+}
+
+.saveBtn:hover {
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+}
+
+.saveBtn:focus {
+  outline: none;
+}
+/* styled save button */ 
+
+/* add style to footer */  
+footer {
+  border-top: 2px solid #aaaaaa;
+  background-attachment: fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  background-color: var(--secondary-color);
+  height: 30px;
+}
+/* end style to footer */
