@@ -37,7 +37,7 @@ function updatetime() {
 
 // add functions to save items in localstorage
 let saveLocalStorage = function() {
-    localStorage.setItem('workSchedule', JSON.stringify(workHours));
+    localStorage.setItem('workSchedule', JSON.stringify());
 };
 
 let saveObjToLocalStorage = function(obj) {
@@ -68,5 +68,5 @@ $("button").on("click", function(key, value) {
     value = $(this).siblings("textarea").val();
     getScheduleDay(key, value);
 });
-  
+
 setInterval(currentDate, 1000);
